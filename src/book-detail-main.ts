@@ -7,6 +7,7 @@ import { renderFooter } from "./components/footer";
 import { books } from "./data/books";
 import { renderBookDetailPage } from "./pages/book-detail";
 import { addFavoriteBook, isFavoriteBook, removeFavoriteBook } from "./services/storage-service";
+import { addCartItem } from "./services/cart-service";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) {
@@ -60,4 +61,10 @@ favoriteButton?.addEventListener("click", () => {
     }
 
     updateFavoriteButton();
+});
+
+const cartButton = document.querySelector<HTMLButtonElement>(".detail-cart-btn");
+cartButton?.addEventListener("click", () => {
+    addCartItem({ bookId: book.id, quantity: 1 });
+    alert("Đã thêm sách vào giỏ hàng!");
 });

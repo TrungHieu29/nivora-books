@@ -9,6 +9,7 @@ import { renderBooksPage } from "./pages/books";
 import { books } from "./data/books";
 import { renderBookList } from "./components/book-list";
 import { addFavoriteBook, isFavoriteBook, removeFavoriteBook } from "./services/storage-service";
+import { addCartItem } from "./services/cart-service";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) {
@@ -77,5 +78,15 @@ favoriteButtons.forEach((button) => {
             icon?.classList.add("fa-solid");
             button.classList.add("active");
         }
+    });
+});
+
+const cartButtons = document.querySelectorAll<HTMLButtonElement>(".cart-btn");
+
+cartButtons.forEach((button) => {
+    const bookId = Number(button.dataset.bookId);
+    button.addEventListener("click", () => {
+        addCartItem({ bookId: bookId, quantity: 1 });
+        alert("Đã thêm sách vào giỏ hàng!");
     });
 });

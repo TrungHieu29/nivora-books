@@ -24,7 +24,7 @@ export function renderBookCard(book: Book): string {
             <button class="favorite-btn" data-book-id="${book.id}">
               <i class="fa-regular fa-heart"></i>
             </button>
-            <button class="cart-btn">
+            <button class="cart-btn" data-book-id="${book.id}">
               <i class="fa-solid fa-cart-shopping"></i>
             </button>
           </div>

@@ -11,7 +11,9 @@ export function renderHeader(): string {
         <a href="favorites.html">
         <i class="fa-regular fa-heart"></i>
         </a>
+        <a href="cart.html">
         <i class="fa-solid fa-cart-shopping"></i>
+        </a>
         </div>
         </div>
     </header>
