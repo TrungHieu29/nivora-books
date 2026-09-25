@@ -6,7 +6,7 @@ import { renderBookList } from "./components/book-list";
 import { renderFooter } from "./components/footer";
 import { renderHeader } from "./components/header";
 import { books } from "./data/books";
-import { addFavoriteBook, getFavoriteBooks, isFavoriteBook, removeFavoriteBook } from "./services/storage-service";
+import { getFavoriteBooks, isFavoriteBook, removeFavoriteBook } from "./services/storage-service";
 
 const app = document.querySelector<HTMLDivElement>("#app");
 if (!app) {
